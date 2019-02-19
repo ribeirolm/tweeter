@@ -19,6 +19,7 @@
 
     <!-- App JS -->
     <script type="text/javascript" src="/scripts/app.js"></script>
+
   </head>
 
   <body>
@@ -34,12 +35,24 @@
       <section class="new-tweet">
         <h2>Compose Tweet</h2>
         <form method="POST" action="/tweets/">
-          <textarea name="text" placeholder="What are you humming about?"></textarea>
+          <textarea class = "textarea" id = "something" name="text" placeholder="What are you humming about?"></textarea>
           <input method="POST" action="/tweets/" type="submit" value="Tweet">
           <span class="counter">140</span>
         </form>
+      </section class="old-tweets">
+        <article class="old-tweet">
+          <header>
+            <img src="https://i.pinimg.com/originals/7d/1a/3f/7d1a3f77eee9f34782c6f88e97a6c888.jpg">
+            <h1 class="username">Bill Fields</h1>
+            <h6 class="handle">@MrFields</h6>
+          </header>
+          <p>Little tweet here</p>
+          <footer> 10 days ago</footer>
+        </article>
+      <section>
+
       </section>
     </main>
-
+    <script type="text/javascript" src="/scripts/composer-char-counter.js"></script>
   </body>
 </html>
