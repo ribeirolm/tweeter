@@ -22,3 +22,16 @@
   float: left;
   line-height: 250%;
 }
+
+
+button {
+  float: right;
+  margin-top: 20px;
+  border-radius: 5px;
+  padding: 10px;
+}
+
+button:hover {
+  background: #E8FDFF;
+  cursor: pointer;
+}

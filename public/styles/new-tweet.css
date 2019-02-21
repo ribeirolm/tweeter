@@ -13,8 +13,8 @@ input {
 }
 
 textarea {
-  margin: auto;
-  width: 94%;
+  margin: 5px 10px;
+  width: 95%;
   display: block;
 }
 
@@ -29,4 +29,20 @@ h2 {
   float: right;
   padding-top: 15px;
   padding-right: 10px;
+}
+
+
+#err-noTweet {
+  background: lightpink;
+  font-size: smaller;
+  margin: 10px;
+  padding: 6px;
+}
+
+
+#err-longTweet {
+  background: lightpink;
+  font-size: smaller;
+  margin: 10px;
+  padding: 6px;
 }

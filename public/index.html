@@ -14,6 +14,9 @@
     <link rel="stylesheet" href="/styles/nav.css" type="text/css" />
 
     <link rel="stylesheet" href="/styles/new-tweet.css" type="text/css" />
+
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+
     <!-- External JS -->
     <script type="text/javascript" src="/vendor/jquery-2.2.3.min.js"></script>
 
@@ -28,30 +31,42 @@
     <nav id="nav-bar">
       <img class="logo" src="/images/bird.png">
       <span class="header">Tweeter</span>
+      <button id="compose-tweet" data-toggle="button"> Compose </button>
     </nav>
 
     <!-- Page-specific (main) content here -->
     <main class="container">
+
       <section class="new-tweet">
         <h2>Compose Tweet</h2>
-        <form method="POST" action="/tweets/">
-          <textarea class = "textarea" id = "something" name="text" placeholder="What are you humming about?"></textarea>
+        <p id= "err-longTweet" hidden>This tweet exceeds the character limit. Shorten the text to submit the tweet.</p>
+        <p id= "err-noTweet" hidden>This tweet contains no content, therefore cannot be submitted.</p>
+        <form id="newTweet" method="POST" action="/tweets/">
+          <textarea class = "textarea" name="text" placeholder="What are you humming about?"></textarea>
           <input method="POST" action="/tweets/" type="submit" value="Tweet">
           <span class="counter">140</span>
         </form>
-      </section class="old-tweets">
+      </section>
+
+      <section id="section-tweet">
         <article class="old-tweet">
-          <header>
+          <header class="art-header">
             <img src="https://i.pinimg.com/originals/7d/1a/3f/7d1a3f77eee9f34782c6f88e97a6c888.jpg">
-            <h1 class="username">Bill Fields</h1>
-            <h6 class="handle">@MrFields</h6>
+            <h3>Bill Fields</h3>
+            <p>@MrFields</p>
           </header>
           <p>Little tweet here</p>
-          <footer> 10 days ago</footer>
+          <footer >
+            <p> 10 days ago</p>
+            <span class="icons">
+              <i class="fas fa-flag"> </i>
+              <i class="fas fa-retweet"> </i>
+              <i class="fas fa-heart"> </i>
+            </span>
+            </footer>
         </article>
-      <section>
-
       </section>
+
     </main>
     <script type="text/javascript" src="/scripts/composer-char-counter.js"></script>
   </body>

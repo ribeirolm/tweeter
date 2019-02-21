@@ -8,7 +8,6 @@ html {
 }
 *, *:before, *:after {
   box-sizing: inherit;
-  font-family: 'Roboto Condensed', sans-serif;
 }
 
 /*
@@ -19,6 +18,7 @@ body {
   margin: 0;
   color: #244751;
   background-color: #eee;
+  font-family: 'Roboto Condensed', sans-serif;
 }
 
 /*
@@ -32,5 +32,74 @@ body {
   height: 100%;
  }
 
+article > footer {
+  padding: 10px;
+  font-size: 11px;
+  border-top: #eee;
+  border-top-style: solid;
+  border-top-width: thin;
+}
+
+article > footer > p {
+  display: inline;
+}
+
+.icons {
+  float: right;
+  opacity: 0;
+  display: inline;
+}
 
 
+.art-header {
+  background-color: #eee;
+  display: flex;
+  justify-content: flex-start;
+}
+
+article {
+  border-radius: 5px;
+  border-style: solid;
+  border-color: lightgray;
+  border-width: thin;
+  margin: 0.5em;
+  transition: opacity .5s;
+  opacity: 0.5;
+}
+
+.old-tweet:hover {
+  opacity: 1
+}
+
+.old-tweet:hover .icons {
+  opacity: 1
+}
+
+article > p {
+  margin: 0.5em;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+header > img {
+  width: 50px;
+  height: 50px;
+  padding-left: 7px;
+  padding-top: 7px;
+  padding-bottom: 7px;
+  padding-right: 7px;
+  border-radius: 5px;
+}
+
+header > h3 {
+  display: inline;
+  font-size: large;
+  font-weight: 600;
+  margin: 0.5em;
+  border-bottom: 2px;
+}
+
+header > p {
+  font-size: 12px;
+  padding-left: 170px;
+}
