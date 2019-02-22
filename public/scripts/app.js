@@ -1,8 +1,11 @@
 // / Fake data taken from tweets.json
 // Test / driver code (temporary). Eventually will get this from the server.
-$(document).ready(function(){
 
-  // const data = [
+// const timeFunction = require("./time-passed");
+
+$(document).ready(function(){
+  //Sample data used when testing:
+  //const data = [
   //   {
   //     "user": {
   //       "name": "Newton",
@@ -49,23 +52,25 @@ $(document).ready(function(){
   //   }
   // ];
 
+//Function to escape user input
   function escape(str) {
     var div = document.createElement('div');
     div.appendChild(document.createTextNode(str));
     return div.innerHTML;
   }
 
+
+//Function to render all tweets including recently submitted tweets
   function renderTweets(tweets) {
-    // loops through tweets
     tweets.forEach(function(el){
-      // calls createTweetElement for each tweet
       let newTweet = createTweetElement(el);
-      // takes return value and appends it to the tweets container
       $("#section-tweet").append(newTweet)
     });
   }
 
+//Function to create new tweets
   function createTweetElement(tweet) {
+    let date = timePassed(tweet.created_at);
     let $tweet = $('<article class="old-tweet">').append(`
 
             <header class="art-header">
@@ -75,7 +80,7 @@ $(document).ready(function(){
             </header>
             <p>${escape(tweet.content.text)}</p>
             <footer >
-              <p> ${escape(tweet.created_at)}</p>
+              <p> ${date}</p>
               <span class="icons">
                 <i class="fas fa-flag"> </i>
                 <i class="fas fa-retweet"> </i>
@@ -87,6 +92,8 @@ $(document).ready(function(){
     return $tweet;
   }
 
+//When new tweet is submitted, validation checks are in place to ensure message exists and is under 140 characters.
+//If there is no message being submitted or the message is over 140 characters and error message is displayed.
   $("#newTweet").submit(function(event) {
     event.preventDefault();
     let $tweet = $(".textarea").val().length;
@@ -104,9 +111,10 @@ $(document).ready(function(){
         $.post( "/tweets/", $("#newTweet").serialize());
         location.reload();
       }
-
   });
 
+
+//Function to load all tweets
   function loadTweets(){
     $.ajax("/tweets", { method: 'GET' })
     .then(function (tweet) {
@@ -115,13 +123,15 @@ $(document).ready(function(){
     });
   }
 
+  //Ensuring all tweets are loaded
     loadTweets();
 
+
+//When the "Compose" button is selected, the new tweet form toggles between a hidden and shown state.
   $("#compose-tweet").click(function() {
     $(".new-tweet").slideToggle("slow");
     $(".textarea").focus();
   });
-
 
 });
 

@@ -24,6 +24,8 @@ body {
 /*
  * Additional CSS can be defined below or in other CSS files, as per instructions
  */
+
+ /*styles for the article container*/
 .container  {
   background-color: white;
   width: 450px;
@@ -32,6 +34,65 @@ body {
   height: 100%;
  }
 
+ /*styles for the article header*/
+.art-header {
+  background-color: #eee;
+  display: flex;
+  justify-content: flex-start;
+}
+
+.art-header > p {
+  font-size: 12px;
+  margin-left: auto;
+  margin-right: 0.5rem;
+
+}
+
+.art-header > img {
+  width: 50px;
+  height: 50px;
+  padding-left: 7px;
+  padding-top: 7px;
+  padding-bottom: 7px;
+  padding-right: 7px;
+  border-radius: 5px;
+}
+
+.art-header > h3 {
+  display: inline;
+  font-size: large;
+  font-weight: 600;
+  margin: 0.5em;
+  border-bottom: 2px;
+}
+
+ /*styles for the articles*/
+article {
+  border-radius: 5px;
+  border-style: solid;
+  border-color: lightgray;
+  border-width: thin;
+  margin: 0.5em;
+  transition: opacity .5s;
+  opacity: 0.5;
+}
+
+article > p {
+  margin: 0.5em;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+ /*style for uncovering a tweet when hovering*/
+.old-tweet:hover {
+  opacity: 1
+}
+
+ /*style for displaying icons on tweet when hovering*/
+.old-tweet:hover .icons {
+  opacity: 1
+}
+ /*styles for the article footer*/
 article > footer {
   padding: 10px;
   font-size: 11px;
@@ -44,62 +105,15 @@ article > footer > p {
   display: inline;
 }
 
+ /*styles for the article footer icons*/
 .icons {
   float: right;
   opacity: 0;
   display: inline;
 }
 
-
-.art-header {
-  background-color: #eee;
-  display: flex;
-  justify-content: flex-start;
-}
-
-article {
-  border-radius: 5px;
-  border-style: solid;
-  border-color: lightgray;
-  border-width: thin;
-  margin: 0.5em;
-  transition: opacity .5s;
-  opacity: 0.5;
-}
-
-.old-tweet:hover {
-  opacity: 1
-}
-
-.old-tweet:hover .icons {
-  opacity: 1
-}
-
-article > p {
-  margin: 0.5em;
-  padding-top: 10px;
-  padding-bottom: 10px;
-}
-
-header > img {
-  width: 50px;
-  height: 50px;
-  padding-left: 7px;
-  padding-top: 7px;
-  padding-bottom: 7px;
-  padding-right: 7px;
-  border-radius: 5px;
-}
-
-header > h3 {
-  display: inline;
-  font-size: large;
-  font-weight: 600;
-  margin: 0.5em;
-  border-bottom: 2px;
-}
-
-header > p {
-  font-size: 12px;
-  padding-left: 170px;
+ /*page footer*/
+main > footer {
+  font-size: xx-small;
+  margin: 0 9rem;
 }
