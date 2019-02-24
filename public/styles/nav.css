@@ -1,4 +1,4 @@
-#nav-bar{
+#nav-bar {
     position: sticky;
     height: 80px;
     width: 100%;
@@ -9,14 +9,14 @@
 }
 
 
-#nav-bar .logo{
+#nav-bar .logo {
   height: 80px;
   width: 80px;
   float: left;
 }
 
 
-#nav-bar .header{
+#nav-bar .header {
   font-size: 2rem;
   margin-left: 10px;
   float: left;
